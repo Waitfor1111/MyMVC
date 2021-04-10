@@ -1,6 +1,9 @@
 package mymvc;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 
 import java.io.IOException;
@@ -170,7 +173,7 @@ public class Handler {
     }
 
     //三个小小弟 负责给injectionParameters做支持的
-    private Object injectionNormal(Class parameterClazz,Param paramAnnotation,HttpServletRequest request){
+    private Object injectionNormal(Class parameterClazz, Param paramAnnotation, HttpServletRequest request){
         Object result = null;
         //获取注解里面的那个key
         String key = paramAnnotation.value();
